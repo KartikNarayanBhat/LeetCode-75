@@ -131,4 +131,28 @@ The vowels are `a, e, i, o, u` (both lowercase and uppercase).
 ## Space Complexity
 - **O(n)** → For the character array (if we consider input string immutable).  
 - **O(1)** extra space if we count only auxiliary variables.  
+---
+# Reverse Words in a String
 
+## Problem Statement
+Given an input string `s`, reverse the order of the words.  
+A word is defined as a sequence of non-space characters. Multiple spaces between words should be reduced to a single space in the output, and there should be no leading or trailing spaces.
+
+---
+
+## Approach
+1. Use `s.trim()` to remove leading and trailing spaces.
+2. Split the string using regex `\\s+` (handles multiple spaces between words).
+   - Example: `"  the sky   is  blue  "` → `["the", "sky", "is", "blue"]`
+3. Iterate over the words array in reverse order and append them into a `StringBuilder`.
+4. Add a single space `" "` between words (but not after the last one).
+5. Return the final string.
+
+---
+
+## Time Complexity
+- **O(n)** → Each character is processed a constant number of times (split + reverse building).
+
+## Space Complexity
+- **O(n)** → For storing the array of words and building the result string.
+---
