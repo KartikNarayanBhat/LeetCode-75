@@ -76,3 +76,31 @@ This approach avoids checking against every kid repeatedly, reducing time comple
 ## Space Complexity
 - **O(n)** → To store the result list.  
 - Only a few extra variables are used (`max`), so extra space is constant apart from the output list.  
+---
+# Can Place Flowers
+
+## Problem Statement
+You are given an array `flowerbed` consisting of `0`s and `1`s, where `0` means empty and `1` means not empty (a flower is already planted).  
+You are also given an integer `n`.  
+
+Return `true` if `n` new flowers can be planted in the flowerbed without violating the rule that no two flowers can be adjacent, otherwise return `false`.
+
+---
+
+## Approach
+1. Iterate through the `flowerbed` array.  
+2. At each position `i`:
+   - If the current spot is `0`, check if both its left and right neighbors are empty (or out of bounds).  
+   - If both neighbors are empty, plant a flower (`flowerbed[i] = 1`) and increment `planted`.  
+3. After processing, compare `planted` with `n`.  
+   - If `planted >= n`, return `true`.  
+   - Otherwise, return `false`.  
+
+---
+
+## Time Complexity
+- **O(n)** → One pass through the flowerbed.  
+
+## Space Complexity
+- **O(1)** → Only a few extra variables are used (`planted`, `left`, `right`).  
+---
