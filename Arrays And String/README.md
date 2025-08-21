@@ -104,3 +104,31 @@ Return `true` if `n` new flowers can be planted in the flowerbed without violati
 ## Space Complexity
 - **O(1)** → Only a few extra variables are used (`planted`, `left`, `right`).  
 ---
+# Reverse Vowels of a String
+
+## Problem Statement
+Given a string `s`, reverse only all the vowels in the string and return it.  
+The vowels are `a, e, i, o, u` (both lowercase and uppercase).
+
+---
+
+## Approach
+1. Use a **two-pointer technique**:
+   - Start with `i = 0` (beginning of string) and `j = s.length() - 1` (end of string).
+2. Convert the string into a character array for easy swapping.
+3. While `i < j`:
+   - Move `i` forward until it points to a vowel.
+   - Move `j` backward until it points to a vowel.
+   - Swap the vowels at positions `i` and `j`.
+   - Move both pointers inward.
+4. Finally, return the new string built from the modified array.
+
+---
+
+## Time Complexity
+- **O(n)** → We scan the string at most once.  
+
+## Space Complexity
+- **O(n)** → For the character array (if we consider input string immutable).  
+- **O(1)** extra space if we count only auxiliary variables.  
+
