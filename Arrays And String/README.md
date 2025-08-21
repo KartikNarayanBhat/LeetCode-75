@@ -221,3 +221,37 @@ The moment we encounter a number larger than both, we’ve found an increasing t
 
 ## Space Complexity
 - **O(1)** → Only constant extra space is used.
+---
+# String Compression
+
+## Problem Statement
+Given an array of characters `chars`, compress it using the following algorithm:
+
+- Begin with an empty string `s`. For each group of consecutive repeating characters in `chars`:
+  - Append the character to `s`.
+  - If the group’s length is greater than `1`, append the group’s length to `s`.
+- The compressed string `s` must be stored back into the input array `chars`.  
+- After you are done modifying the input array, return the new length of the array.
+
+You must write an algorithm that uses **only constant extra space**.
+
+---
+
+## Approach
+The solution uses a **two-pointer technique**:
+
+1. Use `i` to scan the input array and `ind` to write the compressed result.  
+2. For each group of consecutive repeating characters:
+   - Count the frequency (`count = j - i`).  
+   - Write the character at `chars[ind++]`.  
+   - If `count > 1`, convert it to a string and write each digit separately into the array.  
+3. Move `i` to `j` (the next unprocessed character) and continue until the end of the array.  
+4. Return `ind` as the new compressed length.
+
+---
+
+## Time Complexity
+- **O(n)** → Each character is processed once.  
+
+## Space Complexity
+- **O(1)** → Compression is performed in-place without using extra data structures.
