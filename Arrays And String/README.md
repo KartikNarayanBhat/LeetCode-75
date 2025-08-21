@@ -156,3 +156,32 @@ A word is defined as a sequence of non-space characters. Multiple spaces between
 ## Space Complexity
 - **O(n)** → For storing the array of words and building the result string.
 ---
+# Product of Array Except Self
+
+## Problem Statement
+Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of `nums` except `nums[i]`.  
+Special care must be taken when the array contains zeros.
+
+---
+
+## Approach
+The solution handles the problem in three cases:
+
+1. **More than one zero in the array**  
+   - If there are at least two zeros, every product will be `0`.
+
+2. **Exactly one zero in the array**  
+   - Only the index containing the zero will have the product of all non-zero elements.  
+   - All other positions will be `0`.
+
+3. **No zeros in the array**  
+   - Compute the total product of the array.  
+   - Each result element is obtained by dividing the total product by the element at that index.
+
+---
+
+## Time Complexity
+- **O(n)** → One pass to count zeros, another pass to fill the result.
+
+## Space Complexity
+- **O(1)** → No extra space used apart from the output array (in-place modification).
