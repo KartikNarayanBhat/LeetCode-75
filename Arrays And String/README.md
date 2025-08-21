@@ -20,7 +20,7 @@ append the remaining characters of the longer string to the end.
 ## Space Complexity
 - **O(n + m)** for the output string, with only constant extra space used otherwise.
   ---
-  # Greatest Common Divisor of Strings
+# Greatest Common Divisor of Strings
 
 ## Problem Statement
 Given two strings `str1` and `str2`, return the largest string `x` such that:  
