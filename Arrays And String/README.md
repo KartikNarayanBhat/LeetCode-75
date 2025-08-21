@@ -49,3 +49,30 @@ This works because if two strings share a divisor string, their concatenations i
 ## Space Complexity
 - **O(1)**, excluding the space needed for the output substring.
 ---
+# Kids With the Greatest Number of Candies
+
+## Problem Statement
+You are given an integer array `candies` where `candies[i]` represents the number of candies the **i-th kid** has.  
+You are also given an integer `extraCandies`.  
+
+For each kid, check if after giving them all the `extraCandies`, they will have the **greatest number of candies among all kids**.  
+Return a list of booleans where `result[i] = true` if the i-th kid can have the greatest number of candies, otherwise `false`.
+
+---
+
+## Approach
+1. Find the maximum value in the `candies` array (the current greatest number of candies).  
+2. For each kid, add `extraCandies` to their candies count.  
+3. If this value is greater than or equal to `maxCandies`, mark it as `true`, otherwise `false`.  
+4. Store results in a list and return it.  
+
+This approach avoids checking against every kid repeatedly, reducing time complexity.
+
+---
+
+## Time Complexity
+- **O(n)** → One pass to find the maximum, and one pass to build the result.  
+
+## Space Complexity
+- **O(n)** → To store the result list.  
+- Only a few extra variables are used (`max`), so extra space is constant apart from the output list.  
