@@ -1,0 +1,22 @@
+class Solution {
+    public int compress(char[] chars) {
+        int ind=0;
+        int i=0;
+        while(i<chars.length){
+            int j=i;
+            while(j<chars.length&&chars[i]==chars[j]){
+                j++;
+            }
+            int count=j-i;
+            chars[ind++]=chars[i];
+            if(count>=2){
+                char freq[]=Integer.toString(count).toCharArray();
+                for(char c:freq){
+                    chars[ind++]=c;
+                }
+            }
+            i=j;
+        }
+        return ind;
+    }
+}
