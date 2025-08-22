@@ -58,3 +58,38 @@ We use the **two-pointer technique**:
 
 ## Space Complexity
 - **O(1)** → Only a few pointers are used.
+---
+# Container With Most Water
+
+## Problem Statement
+You are given an integer array `height` of length `n`. There are `n` vertical lines drawn such that the two endpoints of the `i`th line are `(i, 0)` and `(i, height[i])`.  
+
+Find two lines that together with the x-axis form a container that can store the most water.  
+Return the maximum amount of water a container can store.
+
+---
+
+## Approach
+We use the **two-pointer technique**:
+
+1. Initialize two pointers:  
+   - `a` at the beginning (`0`)  
+   - `b` at the end (`n - 1`).
+
+2. At each step:
+   - Calculate the area:  
+     `area = min(height[a], height[b]) * (b - a)`  
+   - Update the maximum area if needed.  
+   - Move the pointer pointing to the **shorter line** inward, since moving the taller one won’t help in increasing area.
+
+3. Continue until the two pointers meet.
+
+This ensures we explore all potential containers in an optimized way.
+
+---
+
+## Time Complexity
+- **O(n)** → Each index is visited at most once.
+
+## Space Complexity
+- **O(1)** → Only two pointers and a few variables are used.
