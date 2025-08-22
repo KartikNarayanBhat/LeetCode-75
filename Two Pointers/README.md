@@ -93,3 +93,35 @@ This ensures we explore all potential containers in an optimized way.
 
 ## Space Complexity
 - **O(1)** → Only two pointers and a few variables are used.
+---
+# Max Number of K-Sum Pairs
+
+## Problem Statement
+You are given an integer array `nums` and an integer `k`.  
+In one operation, you can pick two numbers from the array whose sum equals `k` and remove them from the array.  
+
+Return the maximum number of operations you can perform.
+
+---
+
+## Approach
+We solve this using the **two-pointer technique** after sorting:
+
+1. Sort the array `nums`.  
+2. Initialize two pointers:  
+   - `i = 0` (start)  
+   - `j = n - 1` (end).  
+3. While `i < j`:  
+   - If `nums[i] + nums[j] == k`, we found a valid pair → increment `count`, move both pointers inward.  
+   - If the sum is smaller than `k`, move `i` forward to increase the sum.  
+   - If the sum is larger than `k`, move `j` backward to decrease the sum.  
+4. Continue until the pointers cross.  
+
+---
+
+## Time Complexity
+- **O(n log n)** → Sorting takes `O(n log n)`; two-pointer traversal is `O(n)`.  
+
+## Space Complexity
+- **O(1)** → No extra data structures used apart from variables.
+---
