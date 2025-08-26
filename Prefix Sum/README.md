@@ -23,3 +23,35 @@ Return the **highest altitude** reached during the trip.
 ##  Complexity
 - **Time Complexity:** `O(n)` → single traversal of the array.  
 - **Space Complexity:** `O(1)` → only two variables used.  
+---
+---
+# Pivot Index
+
+## Problem Statement
+Given an integer array `nums`, return the **pivot index**.  
+The **pivot index** is the index where the sum of the numbers **to the left** of the index is equal to the sum of the numbers **to the right** of the index.
+
+- If multiple pivot indexes exist, return the **leftmost** one.
+- If no pivot index exists, return `-1`.
+
+---
+
+## Approach
+1. Compute the **total sum** of the array (`tsum`).  
+2. Initialize a variable `lsum = 0` (left sum).  
+3. Traverse the array:
+   - At index `i`, check if  
+     ```
+     lsum == tsum - lsum - nums[i]
+     ```
+     - If true → return `i` (pivot index).  
+   - Otherwise, update `lsum += nums[i]`.  
+4. If no such index is found, return `-1`.
+
+---
+
+## Time Complexity
+- **O(n)** → One pass to calculate total sum, one pass to find pivot index.
+
+## Space Complexity
+- **O(1)** → Uses only constant extra space.
